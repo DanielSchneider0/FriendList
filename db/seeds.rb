@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+require "faker"
+
+
+
+1000.times do
+    friends = Friend.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.free_email,
+    phone: Faker::PhoneNumber.cell_phone
+  )
+
+  friends.save
+
+end
